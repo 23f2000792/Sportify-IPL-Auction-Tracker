@@ -10,6 +10,7 @@ import { Logo } from '../icons/Logo';
 
 const navLinks = [
   { href: '/', label: 'Dashboard', icon: Rocket },
+  { href: '/players', label: 'Players', icon: Users },
   { href: '/rules', label: 'Rules', icon: Shield },
 ];
 
