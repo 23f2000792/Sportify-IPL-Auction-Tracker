@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { House, EligibilityStatus } from '@/types';
+import { House, EligibilityStatus, BudgetStatus } from '@/types';
 import { useFirestoreCollection } from '@/lib/hooks';
 import {
   Table,
@@ -15,17 +15,11 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
-import { Trophy } from 'lucide-react';
+import { Trophy, Users } from 'lucide-react';
 
 const formatCurrency = (value: number) => `₹${value.toFixed(2)} Cr`;
 
 const EligibilityBadge = ({ status }: { status: EligibilityStatus }) => {
-  const variant: 'default' | 'destructive' | 'secondary' =
-    status === 'VALID SQUAD'
-      ? 'default'
-      : status === 'INVALID'
-      ? 'destructive'
-      : 'secondary';
   const colorClass =
     status === 'VALID SQUAD'
       ? 'bg-green-500/20 text-green-700 border-green-500/50'
@@ -35,6 +29,17 @@ const EligibilityBadge = ({ status }: { status: EligibilityStatus }) => {
 
   return <Badge className={cn('font-semibold', colorClass)}>{status}</Badge>;
 };
+
+const BudgetStatusBadge = ({ status }: { status: BudgetStatus }) => {
+    const colorClass =
+      status === 'UNDER'
+        ? 'bg-blue-500/20 text-blue-700 border-blue-500/50'
+        : status === 'OVER'
+        ? 'bg-red-500/20 text-red-700 border-red-500/50'
+        : 'bg-gray-500/20 text-gray-700 border-gray-500/50';
+  
+    return <Badge className={cn('font-semibold', colorClass)}>{status}</Badge>;
+  };
 
 const LoadingSkeleton = () => (
   <TableBody>
@@ -57,6 +62,12 @@ const LoadingSkeleton = () => (
         </TableCell>
         <TableCell>
           <Skeleton className="h-5 w-28" />
+        </TableCell>
+        <TableCell>
+          <Skeleton className="h-5 w-16" />
+        </TableCell>
+        <TableCell>
+            <Skeleton className="h-5 w-12" />
         </TableCell>
         <TableCell>
           <Skeleton className="h-5 w-12" />
@@ -86,7 +97,9 @@ export default function AuctionDashboard() {
             <TableHead className="text-right">Spent</TableHead>
             <TableHead className="text-right">Remaining</TableHead>
             <TableHead>Budget Used</TableHead>
+            <TableHead>Budget Status</TableHead>
             <TableHead>Eligibility</TableHead>
+            <TableHead className="text-center">Total Players</TableHead>
             <TableHead className="text-right">Points</TableHead>
             <TableHead className="text-right">Rank</TableHead>
           </TableRow>
@@ -126,7 +139,16 @@ export default function AuctionDashboard() {
                     </div>
                   </TableCell>
                   <TableCell>
+                    <BudgetStatusBadge status={house.budgetStatus} />
+                  </TableCell>
+                  <TableCell>
                     <EligibilityBadge status={house.eligibilityStatus} />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <div className="flex items-center justify-center gap-2">
+                        <Users className="h-4 w-4 text-muted-foreground" />
+                        <span>{house.squad.total}</span>
+                    </div>
                   </TableCell>
                   <TableCell className="text-right font-semibold">{house.totalPoints}</TableCell>
                   <TableCell className="text-right font-bold text-lg">

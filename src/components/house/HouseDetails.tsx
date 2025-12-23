@@ -82,8 +82,6 @@ export default function HouseDetails({ houseId }: { houseId: string }) {
     { name: 'Uncapped', count: house.squad.uncapped, icon: <Users className="h-5 w-5 text-primary" /> },
   ];
 
-  const totalPlayers = Object.values(house.squad).reduce((sum, count) => sum + count, 0);
-
   return (
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 rounded-lg bg-card p-6 shadow-md">
@@ -158,7 +156,7 @@ export default function HouseDetails({ houseId }: { houseId: string }) {
                   <Users className="h-5 w-5 text-primary" />
                   <div>
                     <p className="text-sm text-primary/80">Total Players</p>
-                    <p className="text-xl font-bold text-primary">{totalPlayers}</p>
+                    <p className="text-xl font-bold text-primary">{house.squad.total}</p>
                   </div>
                 </div>
             </div>

@@ -1,11 +1,14 @@
 export type EligibilityStatus = 'VALID SQUAD' | 'IN PROGRESS' | 'INVALID';
 
+export type BudgetStatus = 'UNDER' | 'OVER' | 'FULL';
+
 export interface Squad {
   batsmen: number;
   bowlers: number;
   wicketKeepers: number;
   allRounders: number;
   uncapped: number;
+  total: number;
 }
 
 export interface House {
@@ -15,12 +18,13 @@ export interface House {
   initialBudget: number;
   moneySpent: number;
   eligibilityStatus: EligibilityStatus;
+  budgetStatus: BudgetStatus;
   totalPoints: number;
   rank: number;
   squad: Squad;
 }
 
-export type HouseDataForRanker = Omit<House, "id" | "logoUrl" | "initialBudget" | "squad"> & {
+export type HouseDataForRanker = Omit<House, "id" | "logoUrl" | "initialBudget" | "squad" | "budgetStatus"> & {
   budgetUsedPercent: number;
 }
 export interface RankAdjustmentSuggestion {
