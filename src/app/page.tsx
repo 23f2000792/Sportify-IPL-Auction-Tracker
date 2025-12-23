@@ -1,22 +1,28 @@
+import AuctionDashboard from '@/components/auction/AuctionDashboard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Rocket } from 'lucide-react';
 
 export default function Home() {
   return (
     <div className="container mx-auto p-4 md:p-8">
-      <h1 className="mb-6 text-3xl font-bold tracking-tight text-center font-headline md:text-4xl">
-        Live Auction Dashboard
-      </h1>
-      <Card className="shadow-lg">
+      <div className="mb-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline text-primary">
+          IPL Auction Command Center
+        </h1>
+        <p className="mt-2 text-lg text-muted-foreground">
+          Live Dashboard & Rulebook Portal for the Sportify IPL Auction
+        </p>
+      </div>
+
+      <Card className="shadow-lg border-primary/20">
         <CardHeader>
-          <CardTitle>House Standings</CardTitle>
+          <div className="flex items-center gap-3">
+            <Rocket className="h-6 w-6 text-primary" />
+            <CardTitle className="text-2xl font-bold">Live Standings</CardTitle>
+          </div>
         </CardHeader>
         <CardContent>
-          <div className="w-full aspect-video">
-            <iframe
-              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG0vAJ870WfhdjQAFJepO76r_JubLbJC3oSWA518KWniDQHs1cpBaBzVuMNnOAKoLaT-mxW39slJDL/pubhtml?gid=841946199&single=true&widget=true&headers=false"
-              className="w-full h-full border-0"
-            ></iframe>
-          </div>
+          <AuctionDashboard />
         </CardContent>
       </Card>
     </div>

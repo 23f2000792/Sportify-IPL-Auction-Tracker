@@ -99,7 +99,7 @@ export default function AuctionDashboard() {
               const moneyRemaining = house.initialBudget - house.moneySpent;
               const budgetUsedPercent = (house.moneySpent / house.initialBudget) * 100;
               return (
-                <TableRow key={house.id} className={cn(house.rank === 1 && 'bg-accent/10')}>
+                <TableRow key={house.id} className={cn(house.rank === 1 && 'bg-primary/10')}>
                   <TableCell>
                     <Image
                       src={house.logoUrl}
