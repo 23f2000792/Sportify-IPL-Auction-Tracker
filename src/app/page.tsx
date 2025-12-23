@@ -1,4 +1,3 @@
-import AuctionDashboard from '@/components/auction/AuctionDashboard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Rocket } from 'lucide-react';
 
@@ -22,7 +21,12 @@ export default function Home() {
           </div>
         </CardHeader>
         <CardContent>
-          <AuctionDashboard />
+          <div className="w-full aspect-video">
+            <iframe
+              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG0vAJ870WfhdjQAFJepO76r_JubLbJC3oSWA518KWniDQHs1cpBaBzVuMNnOAKoLaT-mxW39slJDL/pubhtml?gid=841946199&single=true&widget=true&headers=false"
+              className="w-full h-full border-0"
+            ></iframe>
+          </div>
         </CardContent>
       </Card>
     </div>

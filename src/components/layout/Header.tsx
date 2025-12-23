@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Rocket, Shield, Users } from 'lucide-react';
+import { Menu, Rocket, Shield, Users, UserCog } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -14,7 +14,7 @@ const navLinks = [
   { href: '/rules', label: 'Rules', icon: Shield },
 ];
 
-const adminLink = { href: '/admin', label: 'Admin', icon: Users };
+const adminLink = { href: '/admin', label: 'Admin', icon: UserCog };
 
 export default function Header() {
   const pathname = usePathname();
