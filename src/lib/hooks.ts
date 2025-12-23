@@ -11,7 +11,7 @@ import {
   orderBy,
   Query,
 } from 'firebase/firestore';
-import { db } from './firebase';
+import { getDb } from './firebase';
 
 export function useFirestoreCollection<T>(path: string, order?: string) {
   const [data, setData] = useState<T[]>([]);
@@ -19,6 +19,7 @@ export function useFirestoreCollection<T>(path: string, order?: string) {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    const db = getDb();
     let collectionRef: Query<DocumentData> = collection(db, path) as CollectionReference<DocumentData>;
     if (order) {
         collectionRef = query(collectionRef, orderBy(order));
@@ -66,6 +67,7 @@ export function useFirestoreDocument<T>(path: string) {
         setData(null);
         return;
     }
+    const db = getDb();
     const docRef = doc(db, path) as DocumentReference<DocumentData>;
 
     const unsubscribe = onSnapshot(

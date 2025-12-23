@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
+import { getAuth } from '@/lib/firebase';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -42,6 +42,7 @@ export default function LoginForm() {
     setError(null);
     setLoading(true);
     try {
+      const auth = getAuth();
       await signInWithEmailAndPassword(auth, values.email, values.password);
       router.push('/admin');
     } catch (err: any) {

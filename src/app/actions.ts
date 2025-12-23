@@ -1,7 +1,7 @@
 'use server';
 import { revalidatePath } from 'next/cache';
 import { doc, updateDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { getDb } from '@/lib/firebase';
 import { House } from '@/types';
 
 type UpdateHousePayload = Partial<Omit<House, 'id' | 'squad'>> & {
@@ -10,6 +10,7 @@ type UpdateHousePayload = Partial<Omit<House, 'id' | 'squad'>> & {
 
 export async function updateHouseData(houseId: string, data: UpdateHousePayload) {
   try {
+    const db = getDb();
     const houseRef = doc(db, 'houses', houseId);
     
     // Firestore's updateDoc can handle nested updates with dot notation

@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { auth } from '@/lib/firebase';
+import { getAuth } from '@/lib/firebase';
 import { signOut } from 'firebase/auth';
 import { Edit, LogOut, BrainCircuit } from 'lucide-react';
 
@@ -45,6 +45,7 @@ export default function AdminDashboard() {
   const { data: houses, loading, error } = useFirestoreCollection<House>('houses', 'rank');
 
   const handleLogout = async () => {
+    const auth = getAuth();
     await signOut(auth);
     router.push('/admin/login');
   };
