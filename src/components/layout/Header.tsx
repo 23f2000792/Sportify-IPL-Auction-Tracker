@@ -5,22 +5,17 @@ import { Menu, Rocket, Shield, Users, UserCog } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { useAuth } from '@/components/auth/AuthProvider';
 import { Logo } from '../icons/Logo';
 
 const navLinks = [
   { href: '/', label: 'Dashboard', icon: Rocket },
   { href: '/players', label: 'Players', icon: Users },
   { href: '/rules', label: 'Rules', icon: Shield },
+  { href: '/admin', label: 'Admin', icon: UserCog },
 ];
-
-const adminLink = { href: '/admin', label: 'Admin', icon: UserCog };
 
 export default function Header() {
   const pathname = usePathname();
-  const { user } = useAuth();
-
-  const allLinks = user ? [...navLinks, adminLink] : navLinks;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card shadow-sm">
@@ -29,7 +24,7 @@ export default function Header() {
           <Logo />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
-          {allLinks.map((link) => (
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -52,7 +47,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <nav className="mt-8 flex flex-col gap-6">
-                {allLinks.map((link) => (
+                {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
