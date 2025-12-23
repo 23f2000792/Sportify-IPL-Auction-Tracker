@@ -16,9 +16,9 @@ export default function PlayersPage() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="w-full aspect-video">
+          <div className="w-full aspect-[4/3]">
             <iframe
-              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG0vAJ870WfhdjQAFJepO76r_JubLbJC3oSWA518KWniDQHs1cpBaBzVuMNnOAKoLaT-mxW39slJDL/pubhtml?gid=444812202&single=true&widget=true&headers=false"
+              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG0vAJ870WfhdjQAFJepO76r_JubLbJC3oSWA518KWniDQHs1cpBaBzVuMNnOAKoLaT-mxW39slJDL/pubhtml?widget=true&headers=false"
               className="w-full h-full border-0"
             ></iframe>
           </div>

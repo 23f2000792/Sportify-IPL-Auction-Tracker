@@ -1,9 +1,9 @@
-import { Rocket } from 'lucide-react';
+import { Swords } from 'lucide-react';
 
 export function Logo() {
   return (
     <div className="flex items-center justify-center gap-2">
-      <Rocket className="h-6 w-6 text-primary" />
+      <Swords className="h-6 w-6 text-primary" />
       <span className="text-xl font-bold font-headline">IPL Auction</span>
     </div>
   );
