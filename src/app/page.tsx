@@ -1,5 +1,5 @@
+import AuctionDashboard from '@/components/auction/AuctionDashboard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Rocket } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -15,18 +15,10 @@ export default function Home() {
 
       <Card className="shadow-lg border-primary/20">
         <CardHeader>
-          <div className="flex items-center gap-3">
-            <Rocket className="h-6 w-6 text-primary" />
-            <CardTitle className="text-2xl font-bold">Live Standings</CardTitle>
-          </div>
+          <CardTitle className="text-2xl font-bold">House Standings</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="w-full aspect-video">
-            <iframe
-              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG0vAJ870WfhdjQAFJepO76r_JubLbJC3oSWA518KWniDQHs1cpBaBzVuMNnOAKoLaT-mxW39slJDL/pubhtml?gid=841946199&single=true&widget=true&headers=false"
-              className="w-full h-full border-0"
-            ></iframe>
-          </div>
+          <AuctionDashboard />
         </CardContent>
       </Card>
     </div>
