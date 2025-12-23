@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "sundarbans",
+      "description": "Logo for Sundarbans house",
+      "imageUrl": "https://images.unsplash.com/photo-1506703479330-1bc6e2038b53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bGlvbiUyMGxvZ298ZW58MHx8fHwxNzY2Mzk3MjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lion logo"
+    },
+    {
+      "id": "corals",
+      "description": "Logo for Corals house",
+      "imageUrl": "https://images.unsplash.com/photo-1550129158-ecf8f8fce8af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzaGFyayUyMGxvZ298ZW58MHx8fHwxNzY2NDY5OTE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shark logo"
+    },
+    {
+      "id": "ghats",
+      "description": "Logo for Ghats house",
+      "imageUrl": "https://images.unsplash.com/photo-1602998021068-93daf183c71a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZWxlcGhhbnQlMjBsb2dvfGVufDB8fHx8MTc2NjM5MDgxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "elephant logo"
+    },
+    {
+      "id": "himalayas",
+      "description": "Logo for Himalayas house",
+      "imageUrl": "https://images.unsplash.com/photo-1627052033287-aca3e2d2b339?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZW9wYXJkJTIwbG9nb3xlbnwwfHx8fDE3NjY0Njk5MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leopard logo"
+    },
+    {
+      "id": "thars",
+      "description": "Logo for Thars house",
+      "imageUrl": "https://images.unsplash.com/photo-1737406417548-78e5470cb1cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYW1lbCUyMGxvZ298ZW58MHx8fHwxNzY2NDY5OTE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "camel logo"
+    }
+  ]
 }
